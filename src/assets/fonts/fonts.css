@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Gordia-Light";
+    src: url("./Gordita-Light.otf");
+}
+
+@font-face {
+    font-family: "Gordia-Regular";
+    src: url("./Gordita-Regular.otf");
+}
+
+@font-face {
+    font-family: "Gordia-Medium";
+    src: url("./Gordita-Medium.otf");
+}
+
+@font-face {
+    font-family: "Gordia-Bold";
+    src: url("./Gordita-Bold.otf");
+}
+
+@font-face {
+    font-family: "Gordia-Black";
+    src: url("./Gordita-Black.otf");
+}

@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("../src/assets/fonts/fonts.css");
+
+* {
+  font-family: "Gordia-Regular";
+}
+
+body {
+  @apply overflow-auto;
+}
+
+// Wrappers Style
+
+.app {
+  @apply bg-blue-950 absolute top-0 left-0 w-full min-h-screen -z-50;
+  background-image: url("/assets/images/bg-texture.png");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.container {
+  @apply min-w-[98%] h-full min-h-screen max-h-fit;
+}
+
+//Header Styles
+
+.header {
+  @apply w-full flex items-center h-28;
+
+  .navbar {
+    @apply w-full flex items-center pt-5 max-sm:flex-col;
+
+    .menu {
+      @apply flex items-center gap-8 relative;
+
+      .menu-item {
+        @apply text-slate-400 font-semibold transition-all hover:text-slate-100 flex flex-col cursor-pointer;
+
+        &:hover {
+          .hover-effect {
+            @apply w-full;
+          }
+        }
+
+        a {
+          @apply py-2;
+        }
+
+        .hover-effect {
+          @apply w-0 h-1 rounded-md bg-slate-100 transition-all;
+        }
+        .active {
+          @apply text-slate-100;
+        }
+      }
+      .menu-item__btn {
+        @apply py-2 px-4 text-slate-100 bg-gradient-to-tr from-blue-600 to-sky-500
+              rounded-2xl shadow-md transition-all font-semibold hover:from-sky-500
+            hover:to-blue-600;
+      }
+    }
+    .navbar__logo {
+      @apply flex-grow flex items-center;
+
+      .logo-img {
+        @apply w-24 h-24;
+      }
+
+      .logo-name {
+        @apply font-bold text-xl text-slate-100;
+      }
+    }
+  }
+}
+
+.main {
+  @apply w-full;
+}
+
+// Home Page Styles
+
+.home-header {
+  @apply w-full lg:h-[calc(100vh_-_130px)];
+
+  .home-header-top {
+    @apply flex lg:h-[90%] max-lg:flex-col max-lg:justify-center;
+
+    .home-header__desc {
+      @apply flex-grow lg:max-w-[50%] h-full flex flex-col items-start justify-center max-lg:text-center;
+
+      .desc__header {
+        @apply font-bold max-sm:text-4xl max-sm:w-3/4 max-sm:mx-auto text-6xl lg:w-3/4 text-slate-100 leading-tight;
+      }
+
+      .desc__info {
+        @apply mt-5 font-semibold text-slate-300 lg:w-5/6;
+      }
+
+      .desc__button {
+        @apply mt-5 w-fit max-lg:mx-auto;
+
+        a {
+          @apply py-3 px-6 rounded-3xl bg-gradient-to-r from-blue-700 to-sky-600
+            text-slate-100 font-semibold text-lg transition-all outline outline-2 
+            outline-transparent hover:outline-white;
+        }
+      }
+    }
+
+    .home-header__banner {
+      @apply flex-grow lg:max-w-[50%] h-full flex flex-col items-end justify-center;
+
+      .banner__image {
+        @apply max-lg:w-full max-lg:mb-5 max-lg:mx-auto max-lg:translate-x-10 max-md:translate-x-5;
+      }
+    }
+  }
+
+  .copyright {
+    @apply w-full h-[10%] flex items-end justify-center;
+
+    p {
+      @apply font-mono font-semibold text-slate-400 text-center;
+    }
+  }
+}
+
+// Currencies Styles
+
+.currencies-wrapper {
+  @apply w-full h-full;
+}
+
+.currencies-table {
+  @apply w-full rounded-xl flex flex-col py-10;
+
+  .table-headers {
+    @apply flex justify-between bg-amber-500 rounded-xl;
+
+    .table-header-styles {
+      @apply font-black py-2 px-4 rounded-xl text-slate-800 text-lg first:text-left
+              text-right w-1/4;
+    }
+  }
+
+  .table-rows {
+    @apply w-full flex flex-col;
+
+    .table-body-row {
+      @apply flex justify-between items-center border-b border-slate-400 last:border-none py-3;
+
+      .table-body-styles {
+        @apply first:text-left first:flex first:items-center first:gap-3 text-right py-2 px-4 font-semibold w-1/4;
+      }
+    }
+  }
+}
+
+// Pagination Component
+
+.pagination-action-btn {
+  @apply w-10 h-10 bg-blue-700 text-white flex items-center justify-center font-bold rounded-xl transition-colors hover:bg-blue-600;
+}
+
+.paginate-container {
+  @apply w-1/2 mx-auto flex items-center justify-around text-slate-200 pb-5;
+}
+
+.paginate-pages {
+  a {
+    @apply w-10 h-10 transition-colors font-semibold hover:bg-sky-500 flex items-center justify-center rounded-xl cursor-pointer;
+    font-family: "Gordia-Bold";
+  }
+}
+
+.paginate-pages.active {
+  a {
+    @apply bg-sky-500;
+  }
+}
+
+// About us Styles
+
+.about-wrapper {
+  @apply w-full h-full flex p-4 mt-5;
+
+  .text-wrapper {
+    @apply 2xl:w-8/12;
+
+    h1 {
+      @apply font-bold text-slate-100 text-3xl;
+    }
+  }
+}
