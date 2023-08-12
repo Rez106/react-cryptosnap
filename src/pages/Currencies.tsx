@@ -5,7 +5,7 @@ import { useState } from "react";
 import { BiErrorAlt } from "react-icons/bi";
 import PaginationButtons from "../components/Pagination/PaginationButtons";
 
-export async function loader<T>() {
+export async function loader(): Promise<void> {
   try {
     const response = await fetch(
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false",
@@ -24,10 +24,9 @@ export async function loader<T>() {
 
     const data = await response.json();
     return data;
-  } catch (error) {
+  } catch (error: any) {
     return error.message;
   }
-  return null;
 }
 
 type Coin = {
@@ -60,11 +59,10 @@ type Coin = {
 };
 
 const Currencies = () => {
-  const loaderData = useLoaderData();
+  const loaderData: any = useLoaderData();
   const [NewPageNumber, setNewPageNumber] = useState(1);
-  const [currencies, setCurrencies] = useState<Coin[] | [] | object>([]);
+  const [currencies, setCurrencies] = useState<Coin[] | []>([]);
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (
